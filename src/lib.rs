@@ -1,6 +1,6 @@
 // .---------------------------------------------------------------.
 // |           Written and placed in the public domain by           |
-// |        Jackson G. Kaindume<seestem@protonmail.com>  ⧉         |
+// |        Jackson G. Kaindume<seestem@protonmail.com>  ⧉          |
 // '----------------------------------------------------------[2021]+
 //! # Time based function execution scheduler
 
