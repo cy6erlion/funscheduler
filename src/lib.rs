@@ -1,6 +1,6 @@
 // .---------------------------------------------------------------.
 // |           Written and placed in the public domain by           |
-// |        Jackson G. Kaindume<seestem@protonmail.com>  ⧉          |
+// |        Jackson G. Kaindume<seestem@protonmail.com>  ⧉         |
 // '----------------------------------------------------------[2021]+
 //! # Time based function execution scheduler
 
@@ -16,41 +16,59 @@ pub enum Timing {
 pub struct FunScheduler;
 
 impl FunScheduler {
-    /// Execute a function in specified time intervals, starting now.
+    /// Execute a function in specified time interval,
+    /// the function will be executed imidiately and then start
     pub fn interval(job: fn(), timing: Timing) {
-        let time_control = calc_time(timing);
+        let time = calc_time(timing);
 
         loop {
-            job();
-            std::thread::sleep(time_control);
+            std::thread::spawn(move || {
+                job();
+            });
+
+            std::thread::sleep(time);
+        }
+    }
+
+    /// Like intervals but does not execute immediately.
+    pub fn rinterval(job: fn(), timing: Timing) {
+        let time = calc_time(timing);
+
+        loop {
+            std::thread::sleep(time);
+
+            std::thread::spawn(move || {
+                job();
+            });
         }
     }
 
     /// Execute function once after a specified amount of time
     pub fn after(job: fn(), timing: Timing) {
-        let time_control = calc_time(timing);
-        std::thread::sleep(time_control);
+        let time = calc_time(timing);
+        std::thread::sleep(time);
         job();
     }
 }
 
-pub fn calc_time(timing: Timing) -> Duration {
-    let final_seconds;
+/// Calculate time
+fn calc_time(timing: Timing) -> Duration {
+    let seconds;
     match timing {
-        Timing::Seconds(seconds) => final_seconds = Duration::from_secs(seconds),
+        Timing::Seconds(s) => seconds = Duration::from_secs(s),
         Timing::Minutes(minutes) => {
-            let seconds = minutes * 60;
-            final_seconds = Duration::from_secs(seconds);
+            let s = minutes * 60;
+            seconds = Duration::from_secs(s);
         }
         Timing::Hours(hours) => {
-            let seconds = hours * 3600;
-            final_seconds = Duration::from_secs(seconds);
+            let s = hours * 3600;
+            seconds = Duration::from_secs(s);
         }
         Timing::Days(days) => {
-            let seconds = days * 86_400;
-            final_seconds = Duration::from_secs(seconds);
+            let s = days * 86_400;
+            seconds = Duration::from_secs(s);
         }
     }
 
-    final_seconds
+    seconds
 }
