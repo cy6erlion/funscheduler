@@ -1,0 +1,28 @@
+               ┌─┐┬ ┬┌┐┌┌─┐┌─┐┬ ┬┌─┐┌┬┐┬ ┬┬  ┌─┐┬─┐
+               ├┤ │ ││││└─┐│  ├─┤├┤  │││ ││  ├┤ ├┬┘
+               └  └─┘┘└┘└─┘└─┘┴ ┴└─┘─┴┘└─┘┴─┘└─┘┴└─
+
+----------------------------------------------------------------------
+         Simple time based function execution scheduler
+----------------------------------------------------------------------
+
+use funscheduler::{FunScheduler, Timing};
+
+fn main() {
+  // Execute job every second:
+  FunScheduler::interval(job, Timing::Seconds(1));
+
+  // The rest of the API:
+  // FunScheduler::interval(job, Timing::Minutes(1));
+  // FunScheduler::interval(job, Timing::Hours(1));    
+  // FunScheduler::interval(job, Timing::Days(1));
+
+  // Execute function once after a specified amount of time:
+  // FunScheduler::after(job, Timing::Seconds(1));
+}
+
+fn job() {
+  println!("Hello, world");
+}
+
+----------------------------------------------------------------------
