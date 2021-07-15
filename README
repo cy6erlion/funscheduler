@@ -3,7 +3,7 @@
                └  └─┘┘└┘└─┘└─┘┴ ┴└─┘─┴┘└─┘┴─┘└─┘┴└─
 
 ----------------------------------------------------------------------
-  Simple time based function execution scheduler
+  Time based function execution scheduler
 ----------------------------------------------------------------------
 
     use funscheduler::{FunScheduler, Timing};
@@ -18,16 +18,16 @@
     }
 
 ----------------------------------------------------------------------
-  Timings: Easily congigure the timing of the function execution
+  Timings allow simple congiguration of the function execution
 ----------------------------------------------------------------------
 
-      Timing::Seconds(1)    // Every second
-      Timing::Minutes(25)   // Every 25 minutes
-      Timing::Hours(2)      // Every 2 hours
-      Timing::Days(1)       // Every day same as Timing::Hours(24)
+    Timing::Seconds(1)
+    Timing::Minutes(25)
+    Timing::Hours(2)
+    Timing::Days(1)
     
 ----------------------------------------------------------------------
-  Job runners: Different ways to execute the function
+  Job runners, different methods/ways to execute the function
 ----------------------------------------------------------------------
 
     // Evaluates a function at specified intervals, starting now

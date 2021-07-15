@@ -1,4 +1,5 @@
-//! # Time based function execution scheduler
+//! # funscheduler
+//! Time based function execution scheduler
 use std::time::Duration;
 
 /// Timing configuration
