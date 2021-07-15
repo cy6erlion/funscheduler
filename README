@@ -3,26 +3,45 @@
                └  └─┘┘└┘└─┘└─┘┴ ┴└─┘─┴┘└─┘┴─┘└─┘┴└─
 
 ----------------------------------------------------------------------
-         Simple time based function execution scheduler
+  Simple time based function execution scheduler
 ----------------------------------------------------------------------
 
-use funscheduler::{FunScheduler, Timing};
+    use funscheduler::{FunScheduler, Timing};
 
-fn main() {
-  // Execute job every second:
-  FunScheduler::interval(job, Timing::Seconds(1));
+    fn main() {
+      // Execute job every second
+      FunScheduler::interval(job, Timing::Seconds(1));
+    }
 
-  // The rest of the API:
-  // FunScheduler::interval(job, Timing::Minutes(1));
-  // FunScheduler::interval(job, Timing::Hours(1));    
-  // FunScheduler::interval(job, Timing::Days(1));
-
-  // Execute function once after a specified amount of time:
-  // FunScheduler::after(job, Timing::Seconds(1));
-}
-
-fn job() {
-  println!("Hello, world");
-}
+    fn job() {
+      println!("Hello, world");
+    }
 
 ----------------------------------------------------------------------
+  Timings: Easily congigure the timing of the function execution
+----------------------------------------------------------------------
+
+    - Timing::Seconds(1)    // Every second
+    - Timing::Minutes(25)   // Every 25 minutes
+    - Timing::Hours(2)      // Every 2 hours
+    - Timing::Days(1)       // Every day same as Timing::Hours(24)
+    
+----------------------------------------------------------------------
+  Job runners: Different ways to execute the function
+----------------------------------------------------------------------
+
+    // Evaluates a function at specified intervals, starting now
+    FunScheduler::interval(job, Timing::Seconds(1))
+
+    // Evaluates a function at specified intervals, does not execute
+    // the function immedialy
+    FunScheduler::rinterval(job, Timing::Seconds(1))
+
+    // Execute function once after a specified amount of time
+    FunScheduler::after(job, Timing::Seconds(1))
+
+----------------------------------------------------------------------
+
+.-{ seestem@protonmail.com ⧉ }-------------------------------------.
+| Written and placed in the public domain by Jackson G. Kaindume     |
+'--------------------------------------------------------------[2021]+
