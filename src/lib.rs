@@ -45,30 +45,23 @@ impl FunScheduler {
 
     /// Execute function once after a specified amount of time
     pub fn after(job: fn(), timing: Timing) {
-        let time = calc_time(timing);
-        std::thread::sleep(time);
+        std::thread::sleep(calc_time(timing));
         job();
     }
 }
 
 /// Calculate time
 fn calc_time(timing: Timing) -> Duration {
-    let seconds;
     match timing {
-        Timing::Seconds(s) => seconds = Duration::from_secs(s),
+        Timing::Seconds(s) => return Duration::from_secs(s),
         Timing::Minutes(minutes) => {
-            let s = minutes * 60;
-            seconds = Duration::from_secs(s);
+            return Duration::from_secs(minutes * 60);
         }
         Timing::Hours(hours) => {
-            let s = hours * 3600;
-            seconds = Duration::from_secs(s);
+            return Duration::from_secs(hours * 3600);
         }
         Timing::Days(days) => {
-            let s = days * 86_400;
-            seconds = Duration::from_secs(s);
+            return Duration::from_secs(days * 86_400);
         }
     }
-
-    seconds
 }
