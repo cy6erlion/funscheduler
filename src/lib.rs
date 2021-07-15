@@ -1,11 +1,7 @@
-// .---------------------------------------------------------------.
-// |           Written and placed in the public domain by           |
-// |        Jackson G. Kaindume<seestem@protonmail.com>  ⧉         |
-// '----------------------------------------------------------[2021]+
 //! # Time based function execution scheduler
-
 use std::time::Duration;
 
+/// Timing configuration
 pub enum Timing {
     Seconds(u64),
     Minutes(u64),
@@ -13,6 +9,7 @@ pub enum Timing {
     Days(u64),
 }
 
+/// Different methods/ways of running functions
 pub struct FunScheduler;
 
 impl FunScheduler {

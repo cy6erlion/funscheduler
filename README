@@ -21,10 +21,10 @@
   Timings: Easily congigure the timing of the function execution
 ----------------------------------------------------------------------
 
-    - Timing::Seconds(1)    // Every second
-    - Timing::Minutes(25)   // Every 25 minutes
-    - Timing::Hours(2)      // Every 2 hours
-    - Timing::Days(1)       // Every day same as Timing::Hours(24)
+      Timing::Seconds(1)    // Every second
+      Timing::Minutes(25)   // Every 25 minutes
+      Timing::Hours(2)      // Every 2 hours
+      Timing::Days(1)       // Every day same as Timing::Hours(24)
     
 ----------------------------------------------------------------------
   Job runners: Different ways to execute the function
@@ -40,7 +40,6 @@
     // Execute function once after a specified amount of time
     FunScheduler::after(job, Timing::Seconds(1))
 
-----------------------------------------------------------------------
 
 .-{ seestem@protonmail.com ⧉ }-------------------------------------.
 | Written and placed in the public domain by Jackson G. Kaindume     |
