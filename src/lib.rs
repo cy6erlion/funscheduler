@@ -51,15 +51,9 @@ impl FunScheduler {
 /// Calculate time
 fn calc_time(timing: Timing) -> Duration {
     match timing {
-        Timing::Seconds(s) => return Duration::from_secs(s),
-        Timing::Minutes(minutes) => {
-            return Duration::from_secs(minutes * 60);
-        }
-        Timing::Hours(hours) => {
-            return Duration::from_secs(hours * 3600);
-        }
-        Timing::Days(days) => {
-            return Duration::from_secs(days * 86_400);
-        }
+        Timing::Seconds(s) => Duration::from_secs(s),
+        Timing::Minutes(minutes) => Duration::from_secs(minutes * 60),
+        Timing::Hours(hours) => Duration::from_secs(hours * 3600),
+        Timing::Days(days) => Duration::from_secs(days * 86_400),
     }
 }
