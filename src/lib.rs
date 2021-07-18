@@ -10,12 +10,12 @@ pub enum Timing {
     Days(u64),
 }
 
-/// Different methods/ways of running functions
+/// Different methods for running functions according to time.
 pub struct FunScheduler;
 
 impl FunScheduler {
     /// Execute a function in specified time interval,
-    /// the function will be executed imidiately and then start
+    /// the function will be executed imidiately.
     pub fn interval(job: fn(), timing: Timing) {
         let time = calc_time(timing);
 
@@ -28,7 +28,7 @@ impl FunScheduler {
         }
     }
 
-    /// Like intervals but does not execute immediately.
+    /// Like interval but does not execute immediately.
     pub fn rinterval(job: fn(), timing: Timing) {
         let time = calc_time(timing);
 

@@ -9,16 +9,16 @@
     use funscheduler::{FunScheduler, Timing};
 
     fn main() {
-      // Execute job every second
-      FunScheduler::interval(job, Timing::Seconds(1));
+      // Execute job every five seconds
+      FunScheduler::interval(job, Timing::Seconds(5));
     }
-
+    
     fn job() {
       println!("Hello, world");
     }
 
 ----------------------------------------------------------------------
-  Timings allow simple congiguration of the function execution
+  Timing configurations
 ----------------------------------------------------------------------
 
     Timing::Seconds(1)
@@ -27,7 +27,7 @@
     Timing::Days(1)
     
 ----------------------------------------------------------------------
-  Job runners, different methods/ways to execute the function
+  Job runners, different methods to execute the function
 ----------------------------------------------------------------------
 
     // Evaluates a function at specified intervals, starting now
