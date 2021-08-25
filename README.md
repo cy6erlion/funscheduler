@@ -42,8 +42,4 @@ FunScheduler::rinterval(job, Timing::Seconds(1))
 FunScheduler::after(job, Timing::Seconds(1))
 ```
 
-``` text
-.-{ seestem@protonmail.com ⧉ }-------------------------------------.
-|                    Written by Jackson G. Kaindume                  |
-'--------------------------------------------------------------[2021]+
-```
+⧉

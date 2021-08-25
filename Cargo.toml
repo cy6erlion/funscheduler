@@ -1,6 +1,6 @@
 [package]
 name = "funscheduler"
-authors = ["Jackson G. Kaindume <seestem@protonmail.com>"]
+authors = ["seestem <seestem@merely.tech>"]
 version = "0.1.0"
 edition = "2018"
 description = "Time based function execution scheduler"
