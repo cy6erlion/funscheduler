@@ -3,8 +3,7 @@
 ├┤ │ ││││└─┐│  ├─┤├┤  │││ ││  ├┤ ├┬┘
 └  └─┘┘└┘└─┘└─┘┴ ┴└─┘─┴┘└─┘┴─┘└─┘┴└─
 ```
-
-https://img.shields.io/crates/v/funscheduler
+![crates.io](https://img.shields.io/crates/v/funscheduler.svg "crates.io")
 
 Time based function execution scheduler
 
