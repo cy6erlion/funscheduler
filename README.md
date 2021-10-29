@@ -4,7 +4,7 @@
 └  └─┘┘└┘└─┘└─┘┴ ┴└─┘─┴┘└─┘┴─┘└─┘┴└─
 ```
 
-# funscheduler &emsp; [![Latest Version]][crates.io]
+https://img.shields.io/crates/v/funscheduler
 
 Time based function execution scheduler
 
