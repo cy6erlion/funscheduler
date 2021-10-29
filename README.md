@@ -4,6 +4,8 @@
 └  └─┘┘└┘└─┘└─┘┴ ┴└─┘─┴┘└─┘┴─┘└─┘┴└─
 ```
 
+[crates.io]: https://crates.io/crates/funscheduler
+
 Time based function execution scheduler
 
 ``` rust
