@@ -4,7 +4,7 @@
 └  └─┘┘└┘└─┘└─┘┴ ┴└─┘─┴┘└─┘┴─┘└─┘┴└─
 ```
 
-[crates.io]: https://crates.io/crates/funscheduler
+# funscheduler &emsp; [![Latest Version]][crates.io]
 
 Time based function execution scheduler
 
