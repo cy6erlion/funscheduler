@@ -4,6 +4,12 @@ authors = ["Jackson G. Kaindume <seestem@merely.tech>"]
 version = "0.1.0"
 edition = "2018"
 description = "Time based function execution scheduler"
+license = "MIT"
+keywords = ["timer", "scheduler", "cron", "function"]
+categories = ["date-and-time"]
+homepage = "https://github.com/cy6erlion/funscheduler"
+repository = "https://github.com/cy6erlion/funscheduler"
+readme = "README.md"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
